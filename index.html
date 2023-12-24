@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         
     </head> 
     <body>
@@ -14,21 +14,12 @@
             </div>
             <div class = "buttons">
                 <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
+                <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
             </div>
+            <audio id="noHoverSound" src="audio/no.wav" preload="auto" hidden></audio>
+            <audio id="yesHoverSound" src="audio/yes.wav" preload="auto" hidden></audio>
+            <audio id="clickedSound" src="audio/clicked.wav" preload="auto" hidden></audio>
         </div>
-       
+        <script src="js/main.js"></script>     
     </body> 
 </html>
