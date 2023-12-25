@@ -1,30 +1,25 @@
+const noAudio = new Audio("audio/no.wav");
+const yesAudio = new Audio("audio/yes.wav");
+
 document.getElementById("yesButton").addEventListener("mouseover", (e) => {
-  var hoverSound = document.getElementById("yesHoverSound");
-  hoverSound.currentTime = 0; // Rewind the sound to the beginning
-  hoverSound.play();
+  yesAudio.play();
 });
 
 function nextPage() {
-  var hoverSound = document.getElementById("clickedSound");
-  hoverSound.currentTime = 0; // Rewind the sound to the beginning
-  hoverSound.play();
-
   window.location.href = "yes.html";
 }
 
 function moveButton() {
+  noAudio.play();
+  
   var x =
     Math.random() *
-    (window.innerWidth - document.getElementById("noButton").offsetWidth);
+      (window.innerWidth - document.getElementById("noButton").offsetWidth) -
+    85;
   var y =
     Math.random() *
-    (window.innerHeight - document.getElementById("noButton").offsetHeight);
+      (window.innerHeight - document.getElementById("noButton").offsetHeight) -
+    48;
   document.getElementById("noButton").style.left = `${x}px`;
   document.getElementById("noButton").style.top = `${y}px`;
-
-  // Play the sound
-  var hoverSound = document.getElementById("noHoverSound");
-  hoverSound.currentTime = 0; // Rewind the sound to the beginning
-  hoverSound.play();
-  // Play the sound
 }
